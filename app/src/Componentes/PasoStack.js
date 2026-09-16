@@ -11,7 +11,7 @@ export default (Comp)=>{
                     <Button
                         title="Avancar"
                         onPress={()=>{
-                            Comp.navigation(Comp.avancar)
+                            Comp.navigation.navigate(Comp.avancar)
                         }}
                     />
                     )
@@ -22,7 +22,7 @@ export default (Comp)=>{
                     (
                     <Button
                         title="Retornar"
-                        onPress={()=>Comp.goBack()}
+                        onPress={()=>{Comp.navigation.goBack()}}
                     />
                     )
                     :(false)

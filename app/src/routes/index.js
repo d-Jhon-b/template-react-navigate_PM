@@ -21,9 +21,9 @@ export default function Routes(){
                     <Stack.Screen name="Principal" component={TelaPrincipal} />
                     <Stack.Screen name="Descricao" component={TelaDescricao} />
                     {/* <Stack.Screen name="Tela1" component={Tela1} /> */}
-                    <Stack.Screen name="Tela1" options={{ title: 'Tela 1' }}>
+                    <Stack.Screen name="Tela1" options={{ title: 'Tela1' }}>
                         {(Comp) => (
-                        <PassoSatack {...Comp} avancar="Tela2">
+                        <PassoSatack {...Comp} avancar="Tela1">
                             <Tela1/>
                         </PassoSatack>
                         )}
