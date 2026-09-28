@@ -2,8 +2,9 @@ import React,{useState} from "react";
 import { NavigationContainer, NavigationIndependentTree } from "@react-navigation/native";
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import Tela1 from "../View/Tela1";
-import Tela3 from "../View/Tela1";
-import Tela2 from "../View/Tela1";
+import Tela2 from "../View/Tela2";
+import Tela3 from "../View/Tela3";
+import Tela4 from "../View/Tela4";
 import TelaDescricao from "../Componentes/TelaDescricao";
 import TelaPrincipal from '../Componentes/TelaPrinciapl'
 // import { HeaderShownContext } from "@react-navigation/elements";
@@ -13,7 +14,22 @@ import PassoSatack from '../Componentes/PasoStack'
 
 const Stack = createNativeStackNavigator()
 
-export default function Routes(){
+export default function RoutesBase(){
+    return(
+        <NavigationIndependentTree>
+            <NavigationContainer>
+                <Tela1/>
+                <Tela2/>
+                <Tela3/>
+                <Tela4/>
+            </NavigationContainer>
+        </NavigationIndependentTree>
+    )
+}
+
+
+
+export function Routes(){
     return (
         <NavigationIndependentTree>
             <NavigationContainer>

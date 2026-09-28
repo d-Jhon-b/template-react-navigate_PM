@@ -5,24 +5,22 @@ import Tela1 from '../src/View/Tela1'
 import Tela2 from '../src/View/Tela2'
 import Tela3 from '../src/View/Tela3'
 import Tela4 from '../src/View/Tela4'
-import Routes from '../src/routes/index'
 
+
+import { NavigationIndependentTree, NavigationContainer } from '@react-navigation/native';
+
+// import TabViewFatec from  '../src/Componentes/TelaView'
+import TabViewFatec from "../src/Componentes/TelaView"
 
 export default function HomeScreen() {
   return (
-    // <Routes/>
-
-
-    <SafeAreaProvider>
-      <SafeAreaView style={{flex:1}}>
-        
-        <Tela1/>
-        <Tela2/>
-        <Tela3/>
-        <Tela4/>
-
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationIndependentTree>
+      <NavigationContainer>
+        <SafeAreaView style={{flex:1}}>
+            <TabViewFatec/>
+        </SafeAreaView>
+      </NavigationContainer>
+    </NavigationIndependentTree>
   );
 }
 
