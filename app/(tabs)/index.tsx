@@ -4,23 +4,25 @@ import Estilo from '../src/Componentes/Estilo'
 import Tela1 from '../src/View/Tela1'
 import Tela2 from '../src/View/Tela2'
 import Tela3 from '../src/View/Tela3'
+import Tela4 from '../src/View/Tela4'
 import Routes from '../src/routes/index'
 
 
 export default function HomeScreen() {
   return (
-    <Routes/>
+    // <Routes/>
 
 
-      // <SafeAreaProvider>
-      //   <SafeAreaView style={{flex:1}}>
-          
-      //     <Tela1/>
-      //     <Tela2/>
-      //     <Tela3/>
+    <SafeAreaProvider>
+      <SafeAreaView style={{flex:1}}>
+        
+        <Tela1/>
+        <Tela2/>
+        <Tela3/>
+        <Tela4/>
 
-      //   </SafeAreaView>
-      // </SafeAreaProvider>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
