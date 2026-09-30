@@ -5,7 +5,7 @@ export default function Tela2(){
     return(
         <View style ={[Estilo.containerBase,{backgroundColor:'#109010'}]}>
             <Text style={Estilo.fontGrande}>
-                TELA 1 - RETORNO MUNDO
+                TELA 2
             </Text>
         </View>
     )

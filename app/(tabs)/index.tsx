@@ -9,18 +9,19 @@ import Routes from '../src/routes/index'
 
 export default function HomeScreen() {
   return (
-    <Routes/>
+    // <Routes/>
 
 
-      // <SafeAreaProvider>
-      //   <SafeAreaView style={{flex:1}}>
+      <SafeAreaProvider>
+        <SafeAreaView style={{flex:1}}>
           
-      //     <Tela1/>
-      //     <Tela2/>
-      //     <Tela3/>
+          <Tela1/>
+          <Tela2/>
+          <Tela3/>
+          <Tela4/>
 
-      //   </SafeAreaView>
-      // </SafeAreaProvider>
+        </SafeAreaView>
+      </SafeAreaProvider>
   );
 }
 
