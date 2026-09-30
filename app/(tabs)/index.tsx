@@ -3,6 +3,9 @@ import { Button } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 
+// import Icon from '@react-native-vector-icons/ionicons'
+import Icon from "react-native-vector-icons/Ionicons"
+
 import Estilo from '../src/Componentes/Estilo'
 import Tela1 from '../src/View/Tela1'
 import Tela2 from '../src/View/Tela2'
@@ -11,6 +14,13 @@ import Tela4 from '../src/View/Tela4'
 
 import { createDrawerNavigator, DrawerNavigationProp } from '@react-navigation/drawer';
 import { NavigationContainer, useNavigation, useNavigationBuilder, NavigationIndependentTree } from '@react-navigation/native';
+
+
+interface ParamsValues{
+  nome:String
+  email:String
+  password:String
+}
 
 function TelaPrincipal(){
   const navigation = useNavigation<DrawerNavigationProp<any>>()
@@ -21,7 +31,6 @@ function TelaPrincipal(){
         title='Vamos para a Fatec'
         onPress={() => navigation.navigate('Alunos')} 
         />
-   
     </View>
   )
 }
@@ -61,13 +70,50 @@ function Financeiro(){
 
 const Drawer = createDrawerNavigator()
 
-function MenuDrawer(){
+function MenuDrawer()
+  {
   return(
-    <Drawer.Navigator>
-      <Drawer.Screen name='Principal' component={TelaPrincipal}/>
+    <Drawer.Navigator
+      screenOptions={({route})=>({
+        drawerIcon: ({ color, size }) => {
+          let iconName;
+          switch (route.name) {
+            case 'Principal': // APlicação de cada rota
+              iconName = 'home-outline'; //Icone da tela
+              break;
+            case 'FATEC':
+              iconName = 'school-outline';
+              break;
+            case 'Gremio':
+              iconName = 'book-outline';
+              break;
+            // case 'Tela B':
+            //   iconName = 'briefcase-outline';
+            //   break;
+            case 'Professor':
+              iconName = 'people-outline';
+              break;
+            case 'Financeiro':
+              iconName = 'cash-outline';
+              break;
+            default:
+              iconName = 'help-circle-outline'
+          
+          }
+        return <Icon name={iconName}
+            size={size}
+            color={color} />
+        } 
+      })}
+
+    >
+      <Drawer.Screen 
+        name='Principal' 
+        component={TelaPrincipal}  
+      />
       <Drawer.Screen name='Alunos' component={Alunos}/>
       <Drawer.Screen name='Gremio' component={Gremio}/>
-      <Drawer.Screen name='FInanceiro' component={Financeiro}/>
+      <Drawer.Screen name='Financeiro' component={Financeiro}/>
       <Drawer.Screen name='Professor' component={Professor}/>    
     </Drawer.Navigator>
 
